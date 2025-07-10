@@ -98,7 +98,7 @@ export const FirstApp = ( { title, subTitle }) => {
     return (
     <>        
         <h1>{ title }</h1>
-        <p>Esto es un parrafo.</p>
+        <p>Esto es un parrafo. modificado</p>
         <p>{ subTitle }</p>
     </>
     )
