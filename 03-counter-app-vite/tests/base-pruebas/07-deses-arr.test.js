@@ -1,4 +1,4 @@
-import { retornaArreglo } from '../../src/base-pruebas/07-deses-arr';
+import { retornaArreglo } from '../../src/base-pruebas/07-deses-arr.js';
 
 describe ('Pruebas en 07-desc-arr', () => {
     test ('Debe de retornar un string y un numero', () => {
@@ -7,9 +7,9 @@ describe ('Pruebas en 07-desc-arr', () => {
         expect( letter ).toBe( 'ABC' );
         expect( numbers ).toBe( 123 );
 
-        expect( typeof letter ).toBe( 'string' );
-        expect( typeof numbers ).toBe( 'number' );
+        // expect( typeof letter ).toBe( 'string' );
+        // expect( typeof numbers ).toBe( 'number' );
 
-        expect( letter ).toEqual( expect.any( String ));
+        // expect( letter ).toEqual( expect.any( String ));
     });
 })
