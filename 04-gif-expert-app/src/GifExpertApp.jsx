@@ -5,11 +5,18 @@ export const GifExpertApp = () => {
     
     const [ categories, setCategories ] = useState(['One Punch', 'Dragon Ball']);
 
-    const onAddCategory = () => {
+    const onAddCategory = ( newCategory ) => {
         //const newCategory = 'Samurai X';
         //setCategories([ ...categories, newCategory ]);
-        setCategories([ 'Samurai X', ...categories ]);
+        //setCategories([ 'Samurai X', ...categories ]);
         //setCategories( cats => [ ...cats, newCategory ] );
+
+        //actualizando la lista desde el componente padre
+        //console.log( newCategory );
+        //if ( categories.includes( newCategory ) ) return;
+        if ( categories.toString().toLowerCase().includes( newCategory.toLowerCase() ) ) return;
+
+        setCategories([ newCategory, ...categories ]);
         
     }
 
@@ -19,9 +26,14 @@ export const GifExpertApp = () => {
         <h1>GifExpertApp</h1>
 
         {/* Input */}
-        < AddCategory />
+        < AddCategory 
+            // Esta forma utiliza al componente hijo para actualizar la lista y no 
+            // al componente Padre.
+            // setCategories= { setCategories } 
+            onNewCategory = { onAddCategory }
+        />
 
-        <button onClick={ onAddCategory }>Agregar</button>
+        {/* <button onClick={ onAddCategory }>Agregar</button> */}
     <ol>
         { categories.map( (category) => {
             return <li key={ category }>
