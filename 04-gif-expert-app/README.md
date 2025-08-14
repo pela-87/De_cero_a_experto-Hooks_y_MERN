@@ -54,3 +54,37 @@ module.exports = {
 
 // En caso de necesitar la implementación del FetchAPI
 import 'whatwg-fetch'; // <-- yarn add whatwg-fetch
+
+# Modifique el contenido de los siguientes archivos.
+
+- babel.config.cjs
+
+module.exports = {
+  presets: [
+    '@babel/preset-env',
+    '@babel/preset-react'
+  ],
+  plugins: [
+    '@babel/plugin-transform-runtime'
+  ]
+};
+
+- jest.config.cjs
+
+module.exports = {
+  testEnvironment: 'node',
+  setupFilesAfterEnv: ['./jest.setup.cjs'],
+  transform: {
+    '^.+\\.jsx?$': 'babel-jest'
+  }
+};
+
+- jest.setup.cjs
+
+require('whatwg-fetch'); // <-- yarn add whatwg-fetch
+
+# Corri los siguientes comando en PowerShell
+
+- yarn add -D @babel/plugin-transform-runtime
+- yarn add -D @babel/preset-env
+- yarn add @testing-library/react
